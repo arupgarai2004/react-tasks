@@ -1,0 +1,9 @@
+/* App.css
+   Removed unused template styles to keep CSS minimal.
+   If you need to add app-specific styles, place them here.
+*/
+
+/* Example minimal class to target app-level container */
+.app-root {
+  width: 100%;
+}
