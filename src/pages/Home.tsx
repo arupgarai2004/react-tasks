@@ -1,4 +1,4 @@
-import { useState } from "react";
+import {  useEffect, useState } from "react";
 import { restaurants, restaurantImage, type Restaurant } from "../mocks/restList";
 
 const RestaurantCard = ({ restaurant }: { restaurant: Restaurant }) => {
@@ -7,16 +7,26 @@ const RestaurantCard = ({ restaurant }: { restaurant: Restaurant }) => {
   return (
     <div className={`resCard ${isOpen ? "open" : "closed"}`} >
       <img src={restaurantImage(cloudinaryImageId)} alt={name} />
-      <div>{name}</div>
+      <div>{name} <span className="starrating">{restaurant.avgRating}</span></div>
       <div>{areaName}</div>
     </div>
   );
 };
+
 export default function Home() {
   const [restaurantList, setRestaurantList] = useState<Restaurant[]>(restaurants);
 
+  useEffect(() => {
+     fetchRestaurants();
+}, []);
+  
+  const fetchRestaurants = async () => {
+    const  resturantData =await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING');
+    const restaurants = await resturantData.json();
+    console.log('restaurants:', restaurants);
+}
   function getTopRatedRestaurants() {
-    const topRatedRestaurants = restaurants.filter((restaurant) => restaurant.avgRating >= 4.0);
+    const topRatedRestaurants = restaurants.filter((restaurant) => restaurant.avgRating >= 4.1);
     setRestaurantList(topRatedRestaurants);
   }
 
