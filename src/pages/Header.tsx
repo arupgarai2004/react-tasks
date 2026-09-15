@@ -1,11 +1,10 @@
 
-import {  Route, Routes, Navigate, useNavigate, Link } from 'react-router-dom';
+import { Route, Routes, Navigate, Link } from 'react-router-dom';
 import Home from "./Home";
 import ReffPage from "./ReffPage";
 import ProductList from "./ProductList";
 
 const Header = () => {
-  const navigate = useNavigate();
   return (
     <>
       <div className="header">
