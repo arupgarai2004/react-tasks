@@ -36,7 +36,6 @@ export default function ProductList() {
         onChange={(e) => setFilter(e.target.value)}
         placeholder="Search product"
       />
-
       <button
         type="button"
         onClick={() => {

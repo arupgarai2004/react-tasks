@@ -248,3 +248,5 @@ body {
   font-weight: 400;
   padding: 5px;
 }
+/* Shimmer / skeleton styles */
+.shimmer-image { height: 180px; width: 100%; display: block; }
