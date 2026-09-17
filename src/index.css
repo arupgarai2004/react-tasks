@@ -250,3 +250,14 @@ body {
 }
 /* Shimmer / skeleton styles */
 .shimmer-image { height: 180px; width: 100%; display: block; }
+.login-section{
+  display: flex;
+  justify-content: right;
+  align-items: right;
+}
+.welcome-section{
+  display: flex;
+  justify-content: left;
+  align-items: left;
+  padding: 10px;
+}
